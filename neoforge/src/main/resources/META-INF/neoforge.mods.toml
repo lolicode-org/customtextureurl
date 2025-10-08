@@ -1,0 +1,31 @@
+modLoader = "javafml"
+loaderVersion = "[10,)"
+#issueTrackerURL = ""
+license = "GPL-3.0-or-later"
+
+[[mods]]
+modId = "customtextureurl"
+version = "${version}"
+displayName = "CustomTextureURL"
+authors = "KoishiMoe"
+description = '''
+Allows loading textures from non-mojang domains.
+'''
+#logoFile = ""
+
+[[dependencies.customtextureurl]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.9,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.customtextureurl]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.9,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "customtextureurl.mixins.json"

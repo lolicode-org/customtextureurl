@@ -9,9 +9,10 @@ import java.nio.file.Files;
 import java.util.List;
 
 public class ConfigLoader {
-    public record Config(boolean allowAnyDomain, List<String> allowedDomains, List<String> blockedDomains) {
+    public record Config(boolean skipSignatureCheck, boolean allowAnyDomain, List<String> allowedDomains, List<String> blockedDomains) {
         static Config defaultConfig() {
             return new Config(
+                    true,
                     false,
                     List.of(),
                     List.of()

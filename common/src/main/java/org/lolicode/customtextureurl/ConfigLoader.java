@@ -2,6 +2,8 @@ package org.lolicode.customtextureurl;
 
 import com.google.gson.Gson;
 
+import static org.lolicode.customtextureurl.CustomTextureURL.LOGGER;
+
 import java.nio.file.Path;
 import java.nio.file.Files;
 import java.util.List;
@@ -27,7 +29,7 @@ public class ConfigLoader {
             try {
                 CustomTextureURL.CONFIG = GSON.fromJson(Files.readString(configFile), Config.class);
             } catch (Exception e) {
-                CustomTextureURL.LOGGER.error("Failed to load config file: {}", configFile, e);
+                LOGGER.error("Failed to load config file: {}", configFile, e);
                 CustomTextureURL.CONFIG =  Config.defaultConfig();
             }
         } else {
@@ -35,7 +37,7 @@ public class ConfigLoader {
             try {
                 Files.writeString(configFile, GSON.toJson(defaultConfig));
             } catch (Exception e) {
-                CustomTextureURL.LOGGER.error("Failed to write default config file: {}", configFile, e);
+                LOGGER.error("Failed to write default config file: {}", configFile, e);
             }
             CustomTextureURL.CONFIG =  defaultConfig;
         }

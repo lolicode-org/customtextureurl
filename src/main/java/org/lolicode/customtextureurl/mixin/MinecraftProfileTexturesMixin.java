@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = MinecraftProfileTextures.class, remap = false)
+@Mixin(value = MinecraftProfileTextures.class)
 public abstract class MinecraftProfileTexturesMixin {
     @Inject(method = "signatureState", at = @At("HEAD"), cancellable = true)
     private void modifySignatureState(CallbackInfoReturnable<SignatureState> cir) {

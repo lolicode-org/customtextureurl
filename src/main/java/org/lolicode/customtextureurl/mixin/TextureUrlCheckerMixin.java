@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Mixin(value = TextureUrlChecker.class, remap = false)
+@Mixin(value = TextureUrlChecker.class)
 public class TextureUrlCheckerMixin {
     @Shadow @Final @Mutable private static List<String> ALLOWED_DOMAINS;
     @Shadow @Final @Mutable private static List<String> BLOCKED_DOMAINS;

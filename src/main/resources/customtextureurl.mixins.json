@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "org.lolicode.customtextureurl.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"MinecraftProfileTexturesMixin",
+		"TextureUrlCheckerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
